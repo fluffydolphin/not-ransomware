@@ -70,8 +70,8 @@ These commands are for after you have started HiveMind and adjusted the behaviou
 * !help!
 * * Shows you this
 * !connected!
-* * Shows you how many and which bots are connected
+* * Shows you how many and which nodes are connected based on there number
 * node_number!decrypt!
-* * Shows you the help command for Slowloris https://github.com/fluffydolphin/HiveMind/blob/master/README.md#configuration-options-for-slowloris
+* * decrypts a specifc node
 * !quit!
 * * This is used for quiting either the client or the bot (you have to use this or else you will get a broken pipe error) 
