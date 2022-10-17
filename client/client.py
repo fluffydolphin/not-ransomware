@@ -63,7 +63,7 @@ t.start()
 
 
 while True:
-    if password != 'Hoey4639!':
+    if password != '1212':
         print('Password is incorrect, restart and try again \n')
         sin = "!quit!"
         s.send(sin.encode())
