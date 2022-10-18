@@ -1,6 +1,6 @@
 # not ransomware - is a simple python ransomware script
 
-## What is HiveMind?
+## What is not ransomware?
 not ransomware is basically a ransomware script using sockets to communicate with the attacker and cyptography in python that enrypts all files in its dir are encrypted and with little changes all files that the script has access to can be encrypted also.
 
 1. The server binds sockets together so that the client and nodes can connect.
