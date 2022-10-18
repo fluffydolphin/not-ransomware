@@ -10,7 +10,7 @@ parser = argparse.ArgumentParser(
 )
 
 parser.add_argument(
-    "-p", "--port", default=420, help="Port of the Server", type=int
+    "-p", "--port", default=421, help="Port of the Server", type=int
 )
 
 
@@ -47,39 +47,46 @@ c = socket.socket()
 print(f"[*] Connecting to {host}:{args.port}...")
 c.connect((host, args.port))
 print("[+] Connected.")
-        
+    
+keys = None
 
 def listen_for_messages(cs):
+    global keys
     while True:
         message = c.recv(1024).decode()
         if "!quit!" in message:
             client_socket.close()
             client_sockets.remove(client_socket)
+        if "'s key =" in message:
+            keys = message
+        if "!keys!" in message:
+            c.send(keys.encode())
         print("\n" + message)
-    
-clients = []
+
+nodes = []
+
 
 while True:
     client_socket, client_address = s.accept()
     print(f"[+] {client_address} connected.") 
     client_sockets.add(client_socket)
-    for client_socket in client_sockets:
-        for i in range(1, 100000):
-            if i in clients:
-                continue
-            else:
-                clients.append(i)
-                i = str(i)
-                c.send(i.encode())
-                break
-                
-                
     t = Thread(target=listen_for_client, args=(client_socket,))
     t.daemon = True
     t.start()
     l = Thread(target=listen_for_messages, args=(client_socket,))
     l.daemon = True
     l.start()
+    for client_socket in client_sockets:
+        for i in range(1, 100000):
+            if i in nodes:
+                continue
+            else:
+                nodes.append(i)
+                i = str(i)
+                c.send(i.encode())
+                break
+                
+    
 
 
 for cs in client_sockets:
