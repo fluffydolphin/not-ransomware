@@ -26,12 +26,12 @@ Cloning using git.
    git clone https://github.com/fluffydolphin/not-ransomware.git
    ```
    
-2. Cd into HiveMind
+2. Cd into not ransomware
    ```sh
    cd not-ransomware
    ```
    
-2. Cd into server, client or bot
+2. Cd into server, client or node
    ```sh
    cd server
    ```
@@ -54,7 +54,7 @@ Cloning using git.
   
 That's all it takes to install and run not-ransomware.
 
-## Commands and Configuration for HiveMind
+## Commands and Configuration for not ransomware
 It is possible to modify the behaviour of not-ransomware with cli
 arguments. In order to get an up-to-date help document, just run
 `-h`.
@@ -74,4 +74,4 @@ These commands are for after you have started HiveMind and adjusted the behaviou
 * node_number!decrypt!
 * * decrypts a specifc node
 * !quit!
-* * This is used for quiting either the client or the bot (you have to use this or else you will get a broken pipe error) 
+* * This is used for quiting either the client or the node (you have to use this or else you will get a broken pipe error) 
